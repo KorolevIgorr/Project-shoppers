@@ -4,7 +4,7 @@
     <div class="col">
       1 of 3
       <div class="row">
-        <img id="image" src="5253.66_13.jpg" alt="image error">
+        <img src="5253.66_13.jpg" alt="image error">
       </div>
 
     </div>
@@ -21,6 +21,7 @@
               {{/each}}
             </select>
           </div>
+
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Размер</label>
             <select class="form-select" aria-label="Default select example" id="size" name="bagSize">
@@ -28,10 +29,6 @@
               <option value="{{sizeName}}">{{sizeName}}</option>
             {{/each}}
             </select>
-              <div><label for="disabledSelect" class="form-label" id="height">height: {{height}}</label></div>
-              <div><label for="disabledSelect" class="form-label" id="width">width: {{width}}</label></div>
-              <div><label for="disabledSelect" class="form-label" id="depth">depth: {{depth}}</label></div>
-              <div><label for="disabledSelect" class="form-label" id="handleSize">length of handles: {{handleSize}}</label></div>
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор материал</label>
@@ -64,7 +61,12 @@
             </div>
           </div>
     </div>
+
     </fieldset>
     </form>
   </div>
+
+
+
+
 </div>
