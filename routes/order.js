@@ -5,8 +5,27 @@ const BagModel = require('../model/bagModel');
 const ImageModel = require('../model/image');
 // const ColorModel = require('../model/color');
 
-router.get('/', (req, res) => {
-  res.render('orderFormOne');
+const BagColor = require('../model/bagModel');
+const Color = require('../model/color');
+const Material = require('../model/material');
+const BagModel = require('../model/bagModel');
+const BagSize = require('../model/bagSize');
+const Image = require('../model/image');
+const Text = require('../model/text');
+const Check = require('../model/check');
+
+router.get('/', async (req, res) => {
+  const bagModels = await BagModel.find();
+  const bagColors = await BagColor.find();
+  const materials = await Material.find();
+  const colors = await Color.find();
+  const firstModelSizesArr = await BagSize.find({bagModel: bagModels[0].name})
+  const height = firstModelSizesArr[0].height
+  const width = firstModelSizesArr[0].width
+  const depth = firstModelSizesArr[0].depth
+  const handleSize = firstModelSizesArr[0].handleSize
+  
+  res.render('orderFormOne', {bagModels, bagColors, materials, sizes: firstModelSizesArr, colors, height, width, depth, handleSize}); // ПОМЕНЯЙ НАЗВАНИЕ, КАК У ИГОРЯ!!!
 });
 
 router.post('/upload', (req, res) => {
