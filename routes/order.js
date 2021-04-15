@@ -5,4 +5,4 @@ router.get('/', (req, res) => {
   res.render('orderFormOne'); // ПОМЕНЯЙ НАЗВАНИЕ, КАК У ИГОРЯ!!!
 });
 
-module.exports = router;
+module.exports = router
