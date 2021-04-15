@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const hbs = require('hbs');
 const path = require('path');
+const fileUpload = require('express-fileupload');
 
 const indexRouter = require('./routes/index');
 const orderRouter = require('./routes/order');
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(fileUpload());
 
 app.use('/contacts', contactsRouter);
 app.use('/conditions', conditionsRouter);

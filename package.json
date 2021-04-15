@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "hbs": "^4.1.1",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
