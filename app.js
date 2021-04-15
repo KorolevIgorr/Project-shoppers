@@ -19,6 +19,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
+hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
