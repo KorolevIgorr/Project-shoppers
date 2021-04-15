@@ -1,10 +1,10 @@
-      <form id="order-form-one" action="/order" method="POST">
+        <form action="/order" method="POST">
 <div class="container">
   <div class="row" id="">
     <div class="col">
       1 of 3
       <div class="row">
-        <img id="image" src="5253.66_13.jpg" alt="image error">
+        <img src="5253.66_13.jpg" alt="image error">
       </div>
 
     </div>
@@ -15,38 +15,39 @@
           <legend>Конфигуратор</legend>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор модели</label>
-            <select class="form-select" aria-label="Default select example" id="model">
-              {{#each bagModels}}
-              <option value="{{name}}">{{name}}</option>
-              {{/each}}
+            <select class="form-select" aria-label="Default select example">
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
             </select>
           </div>
+
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Размер</label>
-            <select class="form-select" aria-label="Default select example" id="size">
-              {{#each sizes}}
-              <option value="{{sizeName}}">{{sizeName}}</option>
-            {{/each}}
+            <select class="form-select" aria-label="Default select example">
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
             </select>
-              <div><label for="disabledSelect" class="form-label" id="height">height: {{height}}</label></div>
-              <div><label for="disabledSelect" class="form-label" id="width">width: {{width}}</label></div>
-              <div><label for="disabledSelect" class="form-label" id="depth">depth: {{depth}}</label></div>
-              <div><label for="disabledSelect" class="form-label" id="handleSize">length of handles: {{handleSize}}</label></div>
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор материал</label>
             <select class="form-select" aria-label="Default select example">
-              {{#each materials}}
-                <option value="{{name}}">{{name}}</option>
-              {{/each}}
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
             </select>
           </div>
           <div class="mb-3">
             <label for="Select" class="form-label">Цвет</label>
             <select class="form-select" aria-label="select example">
-              {{#each colors}}
-                <option value="{{name}}">{{name}}</option>
-              {{/each}}
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
             </select>
           </div>
           
@@ -59,7 +60,12 @@
             </div>
           </div>
     </div>
+
     </fieldset>
     </form>
   </div>
+
+
+
+
 </div>
