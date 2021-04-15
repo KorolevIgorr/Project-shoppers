@@ -1,0 +1,13 @@
+<form id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+    <input type="file" name="image" />
+    <input type='submit' value='Upload!' />
+    <div>
+      width:
+    <input id="width" type="text" name="width" placeholder="width"/>
+      height:
+    <input id="height" type="text" name="height" placeholder="height"/>
+    </div>
+</form>
+{{#if image}}
+<img id="image" src="{{image}}" height="200px">
+{{/if}}
