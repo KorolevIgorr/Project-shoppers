@@ -1,12 +1,7 @@
-// const image = document.querySelector("#image")
-// const button = document.querySelector("#button")
-// const height = document.querySelector("#height")
-// const width = document.querySelector("#width")
-
-// button.addEventListener('click', () => {
-//   image.setAttribute('height', height.value);
-//   image.setAttribute('width', width.value);
-// })
+const model = document.querySelector("#model")
+const material = document.querySelector("#material")
+const bagSize = document.querySelector("#size")
+const bagColor = document.querySelector("#bagColor")
 
 const orderFormOne = document.querySelector('#order-form-one');
 const image = document.querySelector('#image');
@@ -29,8 +24,8 @@ orderFormOne.addEventListener('change', async (e) => {
       }),
     });
     const servRes = await response.json();
-    console.log(servRes)
-    image.src = servRes.image.name;
+    console.log(servRes);
+    image.src = servRes.image.image;
     height.innerText = `height: ${servRes.size.height}`;
     width.innerText = `width: ${servRes.size.height}`;
     depth.innerText = `depth: ${servRes.size.height}`;
@@ -57,3 +52,15 @@ orderFormOne.addEventListener('change', async (e) => {
     console.log(servRes);
   }
 });
+
+
+// orderFormOne.addEventListener('submit', async (e) => {
+//   e.preventDefault();
+//   const response = await fetch('/uploadImg', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({model: model.options[model.selectedIndex].value, material: material.options[material.selectedIndex].value, bagSize: bagSize.options[bagSize.selectedIndex].value, bagColor: bagColor.options[bagColor.selectedIndex].value}),
+//   });
+// })

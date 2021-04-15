@@ -64,25 +64,25 @@ const materials = [
 const bagModels = [
   {
     name: 'model1',
-    image: 'img1',
+    image: '/image-bags/model1.jpeg',
     changableHandles: false,
     changableBottom: false,
   },
   {
     name: 'model2',
-    image: 'img2',
+    image: '/image-bags/model2.jpeg',
     changableHandles: false,
     changableBottom: false,
   },
   {
     name: 'model3',
-    image: 'img3',
+    image: '/image-bags/model3.jpeg',
     changableHandles: false,
     changableBottom: false,
   },
   {
     name: 'model4',
-    image: 'img4',
+    image: '/image-bags/model4.jpeg',
     changableHandles: true,
     changableBottom: true,
   },
@@ -238,14 +238,7 @@ async function createCheck() {
   });
 }
 
-async function createBags() {
-  await Image.insertMany([
-    {name: '/image-bags/model1.jpeg'},
-    {name: '/image-bags/model2.jpeg'},
-  ])
-}
-// createBags()
-// createCheck();
+createCheck();
 
 mongoose.connect(
   'mongodb://localhost:27017/shopper',

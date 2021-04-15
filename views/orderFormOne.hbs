@@ -1,4 +1,4 @@
-      <form id="order-form-one" action="/order" method="POST">
+      <form id="order-form-one" action="/uploadImg" method="POST">
 <div class="container">
   <div class="row" id="">
     <div class="col">
@@ -15,7 +15,7 @@
           <legend>Конфигуратор</legend>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор модели</label>
-            <select class="form-select" aria-label="Default select example" id="model">
+            <select class="form-select" aria-label="Default select example" id="model" name="model">
               {{#each bagModels}}
               <option value="{{name}}">{{name}}</option>
               {{/each}}
@@ -23,7 +23,7 @@
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Размер</label>
-            <select class="form-select" aria-label="Default select example" id="size">
+            <select class="form-select" aria-label="Default select example" id="size" name="bagSize">
               {{#each sizes}}
               <option value="{{sizeName}}">{{sizeName}}</option>
             {{/each}}
@@ -35,15 +35,18 @@
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор материал</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="material" name="material">
               {{#each materials}}
                 <option value="{{name}}">{{name}}</option>
               {{/each}}
-            </select>
+            </select> <br>
+            <div>
+              <img src="img/materials.jpg" width="550">
+            </div>
           </div>
           <div class="mb-3">
             <label for="Select" class="form-label">Цвет</label>
-            <select class="form-select" aria-label="select example">
+            <select class="form-select" aria-label="select example" id="bagColor" name="bagColor">
               {{#each colors}}
                 <option value="{{name}}">{{name}}</option>
               {{/each}}
@@ -55,7 +58,9 @@
             <label for="Select" class="form-label" id="priceDiv"> будет DIV стоимости </label>
             </div>
             <div class='next'>
+              <form id="form-two" action="/uploadImg" method="POST">
             <button type="submit" class="btn btn-primary">Далее</button>
+              </form>
             </div>
           </div>
     </div>

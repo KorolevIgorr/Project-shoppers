@@ -1,8 +1,13 @@
-.next{
+.next {
   text-align: right;
 }
 
-#priceDiv{
+#priceDiv {
   border: 2px solid #000;
   border-radius: 10px;
+}
+
+.cardContainer {
+  display: flex;
+  align-content: center;
 }

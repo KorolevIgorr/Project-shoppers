@@ -11,6 +11,7 @@ const cartRouter = require('./routes/cart');
 const helpRouter = require('./routes/help');
 // const conditionsRouter = require('./routes/conditions');
 const contactsRouter = require('./routes/contacts');
+const uploadimgRouter = require('./routes/uploadImg')
 
 const port = 3000;
 const DBname = 'shopper';
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(fileUpload());
 
 app.use('/contacts', contactsRouter);
+app.use('/uploadImg', uploadimgRouter);
 // app.use('/conditions', conditionsRouter);
 app.use('/help', helpRouter);
 app.use('/cart', cartRouter);
@@ -47,3 +49,4 @@ app.listen(port, () => {
     }
   );
 });
+
