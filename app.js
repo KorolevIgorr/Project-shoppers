@@ -9,11 +9,11 @@ const indexRouter = require('./routes/index');
 const orderRouter = require('./routes/order');
 const cartRouter = require('./routes/cart');
 const helpRouter = require('./routes/help');
-const conditionsRouter = require('./routes/conditions');
+// const conditionsRouter = require('./routes/conditions');
 const contactsRouter = require('./routes/contacts');
 
 const port = 3000;
-const DBname = 'shoppers';
+const DBname = 'shopper';
 const app = express();
 
 app.set('view engine', 'hbs');
@@ -26,11 +26,11 @@ app.use(express.json());
 app.use(fileUpload());
 
 app.use('/contacts', contactsRouter);
-app.use('/conditions', conditionsRouter);
+// app.use('/conditions', conditionsRouter);
 app.use('/help', helpRouter);
 app.use('/cart', cartRouter);
 app.use('/order', orderRouter);
-app.use('/', indexRouter);
+app.use('/', indexRouter)
 
 app.listen(port, () => {
   console.log(`Server port ${port} is ready`);

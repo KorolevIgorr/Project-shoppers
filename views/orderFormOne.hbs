@@ -1,14 +1,71 @@
+      <form id="order-form-one" action="/order" method="POST">
 <div class="container">
-  <div class="row">
+  <div class="row" id="">
     <div class="col">
       1 of 3
+      <div class="row">
+        <img id="image" src="5253.66_13.jpg" alt="image error">
+      </div>
+
     </div>
+
     <div class="col-6">
       2 of 3 (wider)
+        <fieldset>
+          <legend>Конфигуратор</legend>
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Выбор модели</label>
+            <select class="form-select" aria-label="Default select example" id="model">
+
+              <option value="model1">Маленькая</option>
+              <option value="model2">Средння</option>
+              <option value="model3">Большая</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Размер</label>
+            <select class="form-select" aria-label="Default select example">
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Выбор материал</label>
+            <select class="form-select" aria-label="Default select example">
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="Select" class="form-label">Цвет</label>
+            <select class="form-select" aria-label="select example">
+
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          
+          <div >
+            <div>
+            <label for="Select" class="form-label" id="priceDiv"> будет DIV стоимости </label>
+            </div>
+            <div class='next'>
+            <button type="submit" class="btn btn-primary">Далее</button>
+            </div>
+          </div>
     </div>
-    
+
+    </fieldset>
+    </form>
   </div>
- 
-    
-    
-  </div>
+
+
+
+
+</div>

@@ -7,6 +7,6 @@ const bagModelSchema = new Schema({
   changableBottom: Boolean
 })
 
-const bagModel = model('BagModel', bagModelSchema);
+const BagModel = model('BagModel', bagModelSchema);
 
-module.exports = bagModel;
+module.exports = BagModel;

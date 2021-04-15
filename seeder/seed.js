@@ -166,7 +166,14 @@ async function createCheck() {
   });
 }
 
-createCheck();
+async function createBags() {
+  await Image.insertMany([
+    {name: '/image-bags/model1.jpeg'},
+    {name: '/image-bags/model2.jpeg'},
+  ])
+}
+createBags()
+// createCheck();
 
 mongoose.connect(
   'mongodb://localhost:27017/shopper',
