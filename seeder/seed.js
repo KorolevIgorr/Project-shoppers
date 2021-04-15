@@ -1,9 +1,29 @@
 const mongoose = require('mongoose');
+const BagColor = require('../model/bagColor')
 const Color = require('../model/color')
 const Material = require('../model/material')
 const BagModel = require('../model/bagModel')
-const Size = require('../model/size')
+const BagSize = require('../model/bagSize')
+const Image = require('../model/image')
+const Text = require('../model/text')
+const Check = require('../model/check')
 
+const bagColors = [
+  {
+    name: 'red',
+    price: 1,
+  },
+  {
+    name: 'blue',
+    price: 2,
+  },
+  {
+    name: 'yellow',
+    price: 3,
+  }
+]
+
+BagColor.insertMany(bagColors);
 
 const colors = [
   {
@@ -76,118 +96,61 @@ const bagModels = [
 
 BagModel.insertMany(bagModels);
 
-const sizes = [
+const bagSizes = [
   {
     bagModel: "model1",
-    size: 'small',
-    price: 11,
-    heighth: 11,
-    width: 11,
-    depth: 11,
-    handleSize: 11
-  },
-  {
-    bagModel: "model1",
-    size: 'medium',
-    price: 12,
-    heighth: 12,
-    width: 12,
-    depth: 12,
-    handleSize: 12
-  },
-  {
-    bagModel: "model1",
-    size: 'big',
-    price: 13,
-    heighth: 13,
-    width: 13,
-    depth: 13,
-    handleSize: 13
+    sizeName: 'small',
+    price: 1,
+    height: 1,
+    width: 1,
+    depth: 1,
+    handleSize: 1,
   },
   {
     bagModel: "model2",
-    size: 'small',
-    price: 21,
-    heighth: 21,
-    width: 21,
-    depth: 21,
-    handleSize: 21
-  },
-  {
-    bagModel: "model2",
-    size: 'medium',
-    price: 22,
-    heighth: 22,
-    width: 22,
-    depth: 22,
-    handleSize: 22
-  },
-  {
-    bagModel: "model2",
-    size: 'big',
-    price: 23,
-    heighth: 23,
-    width: 23,
-    depth: 23,
-    handleSize: 23
+    sizeName: 'medium',
+    price: 2,
+    height: 2,
+    width: 2,
+    depth: 2,
+    handleSize: 2
   },
   {
     bagModel: "model3",
-    size: 'small',
-    price: 31,
-    heighth: 31,
-    width: 31,
-    depth: 31,
-    handleSize: 31
-  },
-  {
-    bagModel: "model3",
-    size: 'medium',
-    price: 32,
-    heighth: 32,
-    width: 32,
-    depth: 32,
-    handleSize: 32
-  },
-  {
-    bagModel: "model3",
-    size: 'big',
-    price: 33,
-    heighth: 33,
-    width: 33,
-    depth: 33,
-    handleSize: 33
+    sizeName: 'big',
+    price: 3,
+    height: 3,
+    width: 3,
+    depth: 3,
+    handleSize: 3
   },
   {
     bagModel: "model4",
-    size: 'small',
-    price: 41,
-    heighth: 41,
-    width: 41,
-    depth: 41,
-    handleSize: 41
-  },
-  {
-    bagModel: "model4",
-    size: 'medium',
-    price: 42,
-    heighth: 42,
-    width: 42,
-    depth: 42,
-    handleSize: 42
-  },
-  {
-    bagModel: "model4",
-    size: 'big',
-    price: 43,
-    heighth: 43,
-    width: 43,
-    depth: 43,
-    handleSize: 43
+    sizeName: 'small',
+    price: 4,
+    height: 4,
+    width: 4,
+    depth: 4,
+    handleSize: 4
   },
 ]
 
-Size.insertMany(sizes);
+BagSize.insertMany(bagSizes);
+
+async function createCheck() {
+  const bag = await BagModel.findOne({name: "model1"});
+  const bagColor = await BagColor.findOne({name: "red"});
+  const material = await Material.findOne({name: "Спанбонд"});
+  const size = await BagSize.findOne({bagModel: bag.name});
+  const color = await Color.findOne({name: "red"});
+
+  const text = await Text.create({name: "text", font: "helveta", bold: true, italic: true, color, area: 200});
+  const image = await Image.create({name: "image", colors: [color], area: 200});
+
+  Check.create({bagModel: bag, bagColor, material, size, text, image, numBags: 500, price: 1000})
+}
+
+createCheck()
 
 mongoose.connect('mongodb://localhost:27017/shopper', {useNewUrlParser: true, useUnifiedTopology: true}, () => {
  console.log('mongoose connected');

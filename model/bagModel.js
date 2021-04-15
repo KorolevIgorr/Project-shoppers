@@ -1,12 +1,12 @@
 const {Schema, model} = require('mongoose')
 
-const modelSchema = new Schema({
+const bagModelSchema = new Schema({
   name: String,
   image: String,
   changableHandles: Boolean,
   changableBottom: Boolean
 })
 
-const bagModel = model('BagModel', modelSchema);
+const bagModel = model('BagModel', bagModelSchema);
 
 module.exports = bagModel;

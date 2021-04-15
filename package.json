@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/KorolevIgorr/Project-shoppers#readme",
   "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
     "mongoose": "^5.12.3"
   }
 }

@@ -3,20 +3,29 @@ const {Schema, model} = require('mongoose')
 const checkSchema = new Schema({
   bagModel: {
     type: Schema.Types.ObjectId,
-    ref="BagModel"
+    ref: "BagModel"
   },
-  color: {
+  bagColor: {
     type: Schema.Types.ObjectId,
-    ref="Color"
+    ref: "BagColor"
   },
   material: {
     type: Schema.Types.ObjectId,
-    ref="Material"
+    ref: "Material"
   },
   size: {
     type: Schema.Types.ObjectId,
-    ref="Size"
+    ref: "BagSize"
   },
+  text: {
+    type: Schema.Types.ObjectId,
+    ref: "Text"
+  },
+  image: {
+    type: Schema.Types.ObjectId,
+    ref: "Image"
+  },
+  numBags: Number,
   price: Number
 })
 
