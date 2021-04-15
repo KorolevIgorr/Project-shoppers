@@ -1,0 +1,6 @@
+Аккаунт на yandex
+Имя: Shopper-Store
+Фамилия: Shopper-Store
+Логин: Shopper-Store
+пароль: passwordforshopperstore
+Контрольный вопрос: "Ваш любимый киногерой", ответ: Бэтмен
