@@ -90,6 +90,12 @@ total price: --------------------- ${check.price * check.numBags}₽`;
 }
 
 write()
+async function findNewestCheck() {
+  const a = await Check.findOne({}, {}, { sort: { 'updatedAt' : -1 } })
+  console.log(a)
+}
+
+// findNewestCheck()
 
 mongoose.connect(
   'mongodb://localhost:27017/shopper',
