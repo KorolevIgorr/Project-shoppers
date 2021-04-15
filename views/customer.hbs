@@ -19,7 +19,8 @@
             <input type="email" class="form-control" id="email" placeholder="Введите Адрес Доставки" required>
             </div>
             </div><br>
-            <div id="final-order">
+           <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Заказать</button><br>
+          <br><div id="final-order">
            {{#if check}}
            <div><img src={{check.bagModel.image}}></div>
            <div>
@@ -32,6 +33,5 @@
            </ul>
            </div>
            {{/if}}
-           </div><br>
-            <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Заказать</button>
+            </div>
             </form>

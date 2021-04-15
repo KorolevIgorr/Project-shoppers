@@ -11,6 +11,10 @@
   display: flex;
   align-content: center;
 }
+#order-and-button{
+  display: flex;
+  justify-content: space-between;
+}
 
 #final-order {
   display: flex;
