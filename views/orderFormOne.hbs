@@ -4,9 +4,10 @@
     <div class="col">
       1 of 3
       <div class="row">
-        <img src="5253.66_13.jpg" alt="image error">
+        <img id="image" src="5253.66_13.jpg" alt="image error">
+        
       </div>
-
+    
     </div>
 
     <div class="col-6">
@@ -29,6 +30,10 @@
               <option value="{{sizeName}}">{{sizeName}}</option>
             {{/each}}
             </select>
+            <div><label id="height" for="disabledSelect" class="form-label">height:{{height}}</label></div>
+              <div><label id="width" for="disabledSelect" class="form-label">width:{{width}}</label></div>
+              <div><label id="depth" for="disabledSelect" class="form-label">depth:{{depth}}</label></div>
+              <div><label id="handleSize" for="disabledSelect" class="form-label">length of handles:{{handleSize}}</label></div>
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор материал</label>

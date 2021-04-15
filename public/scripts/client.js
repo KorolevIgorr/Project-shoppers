@@ -1,7 +1,7 @@
-const model = document.querySelector("#model")
-const material = document.querySelector("#material")
-const bagSize = document.querySelector("#size")
-const bagColor = document.querySelector("#bagColor")
+const model = document.querySelector('#model');
+const material = document.querySelector('#material');
+const bagSize = document.querySelector('#size');
+const bagColor = document.querySelector('#bagColor');
 
 const orderFormOne = document.querySelector('#order-form-one');
 const image = document.querySelector('#image');
@@ -53,7 +53,6 @@ orderFormOne.addEventListener('change', async (e) => {
   }
 });
 
-
 // orderFormOne.addEventListener('submit', async (e) => {
 //   e.preventDefault();
 //   const response = await fetch('/uploadImg', {
@@ -64,3 +63,15 @@ orderFormOne.addEventListener('change', async (e) => {
 //     body: JSON.stringify({model: model.options[model.selectedIndex].value, material: material.options[material.selectedIndex].value, bagSize: bagSize.options[bagSize.selectedIndex].value, bagColor: bagColor.options[bagColor.selectedIndex].value}),
 //   });
 // })
+
+const imageLoader = document.querySelector('#uploadForm');
+orderFormOne.addEventListener('click', (e) => {
+  if (e.target.id === 'sumbit-loader') {
+    e.preventDefault();
+  }
+  console.log(e.target);
+});
+
+imageLoader.addEventListener('submit', (e) => {
+  e.preventDefault();
+});

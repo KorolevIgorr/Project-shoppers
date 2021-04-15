@@ -11,19 +11,24 @@ const router = Router();
 
 router.post('/', async (req, res) => {
   const { model, bagColor, material, bagSize } = req.body;
+  console.log(req.body);
   const finalBag = await BagModel.findOne({ name: model });
   const finalBagColor = await BagColor.findOne({ name: bagColor });
   const finalMaterial = await Material.findOne({ name: material });
-  const finalSize = await BagSize.findOne({ bagModel: model });
+  const finalSize = await BagSize.findOne({ bagModel: model, sizeName: bagSize });
+  let numBags = 500;
+  console.log(finalSize);
   const check = await Check.create({
     bagModel: finalBag,
     bagColor: finalBagColor,
     material: finalMaterial,
-    sizeName: finalSize.name,
-    numBags: 500,
-    price: 1000,
+    sizeName: finalSize.sizeName,
+    numBags: numBags,
+    price:
+      (finalBagColor.price + finalMaterial.price + finalSize.price) * numBags,
   });
-  res.redirect('/contacts');
+  console.log(check)
+  res.redirect('/cart');
 });
 
 module.exports = router;
