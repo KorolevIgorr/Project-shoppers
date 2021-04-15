@@ -1,15 +1,15 @@
 const {Schema, model} = require('mongoose')
 
-const sizeSchema = new Schema({
+const bagSizeSchema = new Schema({
   bagModel: String,
   sizeName: String, //small, medium, big, individualized
   price: Number,
-  heighth: Number,
+  height: Number,
   width: Number,
   depth: Number,
   handleSize: Number
 })
 
-const size = model('Size', sizeSchema);
+const bagSize = model('BagSize', bagSizeSchema);
 
-module.exports = size;
+module.exports = bagSize;
