@@ -244,7 +244,7 @@ async function createBags() {
     {name: '/image-bags/model2.jpeg'},
   ])
 }
-createBags()
+// createBags()
 // createCheck();
 
 mongoose.connect(

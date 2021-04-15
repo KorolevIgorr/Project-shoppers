@@ -15,32 +15,23 @@
           <legend>Конфигуратор</legend>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор модели</label>
-<<<<<<< HEAD
             <select class="form-select" aria-label="Default select example" id="model">
-
-              <option value="model1">Маленькая</option>
-              <option value="model2">Средння</option>
-              <option value="model3">Большая</option>
-=======
-            <select class="form-select" aria-label="Default select example">
               {{#each bagModels}}
               <option value="{{name}}">{{name}}</option>
               {{/each}}
->>>>>>> 187a9fa7df229a833d6fb6be862e4682a9ca3be3
             </select>
           </div>
-
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Размер</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="size">
               {{#each sizes}}
               <option value="{{sizeName}}">{{sizeName}}</option>
             {{/each}}
             </select>
-              <div><label for="disabledSelect" class="form-label">height:{{height}}</label></div>
-              <div><label for="disabledSelect" class="form-label">width:{{width}}</label></div>
-              <div><label for="disabledSelect" class="form-label">depth:{{depth}}</label></div>
-              <div><label for="disabledSelect" class="form-label">length of handles:{{handleSize}}</label></div>
+              <div><label for="disabledSelect" class="form-label" id="height">height: {{height}}</label></div>
+              <div><label for="disabledSelect" class="form-label" id="width">width: {{width}}</label></div>
+              <div><label for="disabledSelect" class="form-label" id="depth">depth: {{depth}}</label></div>
+              <div><label for="disabledSelect" class="form-label" id="handleSize">length of handles: {{handleSize}}</label></div>
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор материал</label>
