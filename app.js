@@ -1,20 +1,27 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
+require('dotenv').config();
 const hbs = require('hbs');
 const path = require('path');
 const fileUpload = require('express-fileupload');
+const MongoClient = require('mongodb').MongoClient;
 
 const indexRouter = require('./routes/index');
 const orderRouter = require('./routes/order');
 const cartRouter = require('./routes/cart');
 const helpRouter = require('./routes/help');
-// const conditionsRouter = require('./routes/conditions');
 const contactsRouter = require('./routes/contacts');
-const uploadimgRouter = require('./routes/uploadImg')
+const uploadimgRouter = require('./routes/uploadImg');
 
-const port = 3000;
-const DBname = 'shopper';
+const port = process.env.PORT || 4256;
+const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME;
+const uri = process.env.DB_ATLAS_PATH;
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+// const DBname = 'shopper';
 const app = express();
 
 app.set('view engine', 'hbs');
@@ -28,16 +35,15 @@ app.use(fileUpload());
 
 app.use('/contacts', contactsRouter);
 app.use('/uploadImg', uploadimgRouter);
-// app.use('/conditions', conditionsRouter);
 app.use('/help', helpRouter);
 app.use('/cart', cartRouter);
 app.use('/order', orderRouter);
-app.use('/', indexRouter)
+app.use('/', indexRouter);
 
 app.listen(port, () => {
   console.log(`Server port ${port} is ready`);
   mongoose.connect(
-    `mongodb://localhost:27017/${DBname}`,
+    uri,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -49,4 +55,3 @@ app.listen(port, () => {
     }
   );
 });
-

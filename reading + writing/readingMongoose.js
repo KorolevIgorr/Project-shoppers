@@ -60,19 +60,5 @@ async function write() {
 }
 
 write();
-async function findNewestCheck() {
-  const a = await Check.findOne({}, {}, { sort: { updatedAt: -1 } });
-  console.log(a);
-}
-
-// findNewestCheck()
-
-mongoose.connect(
-  'mongodb://localhost:27017/shopper',
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => {
-    console.log('mongoose connected');
-  }
-);
 
 module.exports = write;

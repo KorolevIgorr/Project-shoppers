@@ -1,5 +1,6 @@
 'use strict';
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 async function main(name, lastname, email, phone, adres) {
   let transporter = nodemailer.createTransport({
@@ -7,13 +8,13 @@ async function main(name, lastname, email, phone, adres) {
     port: 465,
     secure: true,
     auth: {
-      user: 'shopper-store@yandex.ru',
-      pass: 'passwordforshopperstore',
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 
   let info = await transporter.sendMail({
-    from: 'shopper-store@yandex.ru',
+    from: process.env.EMAIL_USER,
     to: 'zvoznikovandrey@gmail.com',
     subject: 'Спецификация',
     text: `Добрый день. Во вложении спецификация и картинка для печати\nИнформация о заказе:\nИмя: ${name}\nФамилия: ${lastname}\nE-mail: ${email}\nТелефон: ${phone}\nАдрес доставки: ${adres}`,

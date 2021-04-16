@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 const BagColor = require('../model/bagColor');
 const Color = require('../model/color');
 const Material = require('../model/material');
@@ -272,36 +273,36 @@ async function createCheck() {
   const size = await BagSize.findOne({ bagModel: bag.name });
   const color = await Color.findOne({ name: 'red' });
 
-  const text = await Text.create({
-    name: 'text',
-    font: 'helveta',
-    bold: true,
-    italic: true,
-    color,
-    area: 200,
-  });
-  const image = await Image.create({
-    name: 'image',
-    colors: [color],
-    area: 200,
-  });
+  // const text = await Text.create({
+  //   name: 'text',
+  //   font: 'helveta',
+  //   bold: true,
+  //   italic: true,
+  //   color,
+  //   area: 200,
+  // });
+  // const image = await Image.create({
+  //   name: 'image',
+  //   colors: [color],
+  //   area: 200,
+  // });
 
-  Check.create({
-    bagModel: bag,
-    bagColor,
-    material,
-    size,
-    text,
-    image,
-    numBags: 500,
-    price: 1000,
-  });
+  // Check.create({
+  //   bagModel: bag,
+  //   bagColor,
+  //   material,
+  //   size,
+  //   text,
+  //   image,
+  //   numBags: 500,
+  //   price: 1000,
+  // });
 }
 
 createCheck();
 
 mongoose.connect(
-  'mongodb://localhost:27017/shopper',
+  process.env.DB_ATLAS_PATH,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log('mongoose connected');

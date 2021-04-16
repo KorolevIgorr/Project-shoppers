@@ -4,6 +4,24 @@
     <div class="col-6 offset-3">
       <div class="form_box text-center">
         <h4>Карточка покупателя</h4>
+        <div class="container">
+   <div class="center">
+<br><div id="final-order" class="">
+           {{#if check}}
+           <div><img src={{check.bagModel.image}} style="max-height: 200px;"></div>
+           <div>
+           <ul>
+             <li>Модель: {{check.bagModel.name}}</li>
+             <li>Цвет сумки: {{check.bagColor.name}}</li>
+             <li>Материал: {{check.material.name}}</li>
+             <li>Тираж: {{check.numBags}}</li>
+             <li>Общая стоимость: {{check.price}}</li>
+           </ul>
+           </div>
+           {{/if}}
+            </div><br>
+            </div>
+</div>
         <div class="row">
           <div class="input_box col-6">
             <input name="name" id="name" type="text" class="form-control" placeholder="Enter FirstName" required>
@@ -29,47 +47,10 @@
             <button class="btn btn-primary">Order</button>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
 </div> 
 
-
- <div class="container">
-   <div class="center">
-<br><div id="final-order" class="">
-           {{#if check}}
-           <div><img src={{check.bagModel.image}}></div>
-           <div>
-           <ul>&emsp; Ваш заказ:
-             <li>Модель: {{check.bagModel.name}}</li>
-             <li>Цвет сумки: {{check.bagColor.name}}</li>
-             <li>Материал: {{check.material.name}}</li>
-             <li>Тираж: {{check.numBags}}</li>
-             <li>Общая стоимость: {{check.price}}</li>
-           </ul>
-           </div>
-           {{/if}}
-            </div><br>
-            </div>
-</div>
-  {{!-- <div class="row">
-    <div class="form-group col-sm-6">
-      <label for="name" class="h4">Имя</label>
-      <input name="name" type="text" class="form-control" id="name" placeholder="Введите Имя" required>
-      </div>
-      <div class="form-group col-sm-6">
-        <label for="lastName" class="h4">Фамилия</label>
-        <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Введите Фамилию" required>
-        </div>
-        <div class="form-group col-sm-6">
-          <label for="email" class="h4">Почта</label>
-          <input name="email" type="email" class="form-control" id="email" placeholder="Введите Почту" required>
-          </div>
-          <div class="form-group col-sm-6">
-            <label for="adres" class="h4">Адрес доставки</label>
-            <input name="adres" type="text" class="form-control" id="adres" placeholder="Введите Адрес Доставки" required>
-            </div>
-            </div><br>
-           <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Заказать</button><br> --}}
             </form>

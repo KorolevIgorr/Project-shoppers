@@ -12,7 +12,6 @@ const router = Router();
 
 
 router.post('/', async (req, res) => {
-  console.log(req.body)
   const { model, bagColor, material, bagSize, limit } = req.body;
   const finalBag = await BagModel.findOne({ name: model });
   const finalBagColor = await BagColor.findOne({ name: bagColor });
