@@ -18,7 +18,8 @@
 
 #final-order {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  color: #1569B2;
 }
 
 #form2image {
@@ -36,7 +37,7 @@
 #a-dalee {
   color: white;
 }
-form_box{
+.form_box{
   background: #FFFFFF;
   padding: 30px;
   border: 1px solid #666;
@@ -99,4 +100,7 @@ form_box{
  font-size: 12px;
  color: #1569B2;
  font-weight: 500;
+}
+.center {
+  
 }

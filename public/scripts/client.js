@@ -1,5 +1,3 @@
-
-
 const model = document.querySelector('#model');
 const material = document.querySelector('#material');
 const bagSize = document.querySelector('#size');
@@ -19,7 +17,6 @@ const handleSize = document.querySelector('#handleSize');
 
 orderFormOne.addEventListener('change', async (e) => {
   if (e.target.id === 'model') {
-    console.log(e.target.parentNode.nextElementSibling.children[1].value);
     const response = await fetch('/order/bags', {
       method: 'POST',
       headers: {
@@ -31,15 +28,13 @@ orderFormOne.addEventListener('change', async (e) => {
       }),
     });
     const servRes = await response.json();
-    console.log(servRes);
     image.src = servRes.image.image;
-    height.innerText = `height: ${servRes.size.height}`;
-    width.innerText = `width: ${servRes.size.height}`;
-    depth.innerText = `depth: ${servRes.size.height}`;
-    handleSize.innerText = `length of handles: ${servRes.size.height}`;
+    height.innerText = `Высота: ${servRes.size.height}`;
+    width.innerText = `Ширина: ${servRes.size.height}`;
+    depth.innerText = `Глубина: ${servRes.size.height}`;
+    handleSize.innerText = `Длина ручек: ${servRes.size.height}`;
   }
   if (e.target.id === 'size') {
-    // console.log(e.target.value)
     const response = await fetch('/order/size', {
       method: 'POST',
       headers: {
@@ -51,10 +46,10 @@ orderFormOne.addEventListener('change', async (e) => {
       }),
     });
     const servRes = await response.json();
-    height.innerText = `height: ${servRes.height}`;
-    width.innerText = `width: ${servRes.height}`;
-    depth.innerText = `depth: ${servRes.height}`;
-    handleSize.innerText = `length of handles: ${servRes.height}`;
+    height.innerText = `Высота: ${servRes.height}`;
+    width.innerText = `Ширина: ${servRes.height}`;
+    depth.innerText = `Глубина: ${servRes.height}`;
+    handleSize.innerText = `Длина ручек: ${servRes.height}`;
   }
   if (e.target.id === 'bagColor') {
     e.target.parentNode.append(divColor);

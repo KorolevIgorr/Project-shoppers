@@ -24,10 +24,8 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/complete-order', (req, res) => {
-  console.log(req.body);
   const { name, lastName, email, phone, adres } = req.body;
   write();
-
   main(name, lastName, email, phone, adres).catch(console.error);
   res.redirect('/done');
 });

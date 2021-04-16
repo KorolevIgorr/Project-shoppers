@@ -3,7 +3,6 @@
 <div class="container">
   <div class="row" id="">
     <div class="col">
-      1 of 3
       <div class="row">
         <img id="image" src="image-bags/model1.jpeg" alt="image error">
         
@@ -12,7 +11,6 @@
     </div>
 
     <div class="col-6">
-      2 of 3 (wider)
         <fieldset>
           <legend>Конфигуратор</legend>
           <div class="mb-3">
@@ -30,11 +28,11 @@
               {{#each sizes}}
               <option value="{{sizeName}}">{{sizeName}}</option>
             {{/each}}
-            </select>
-            <div><label id="height" for="disabledSelect" class="form-label">height:{{height}}</label></div>
-              <div><label id="width" for="disabledSelect" class="form-label">width:{{width}}</label></div>
-              <div><label id="depth" for="disabledSelect" class="form-label">depth:{{depth}}</label></div>
-              <div><label id="handleSize" for="disabledSelect" class="form-label">length of handles:{{handleSize}}</label></div>
+            </select><br>
+            <div><label id="height" for="disabledSelect" class="form-label">Высота: {{height}}</label></div>
+              <div><label id="width" for="disabledSelect" class="form-label">Ширина: {{width}}</label></div>
+              <div><label id="depth" for="disabledSelect" class="form-label">Глубина: {{depth}}</label></div>
+              <div><label id="handleSize" for="disabledSelect" class="form-label">Длина ручек: {{handleSize}}</label></div>
           </div>
           <div class="mb-3">
             <label for="disabledSelect" class="form-label">Выбор материал</label>
@@ -61,7 +59,7 @@
           </div>
           <div >
             <div>
-            <label for="Select" class="form-label" id="priceDiv"> будет DIV стоимости </label>
+            {{!-- <label for="Select" class="form-label" id="priceDiv"> будет DIV стоимости </label> --}}
             </div>
             <div class='next'>
               <form id="form-two" action="/uploadImg" method="POST">

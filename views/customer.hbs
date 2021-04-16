@@ -1,9 +1,4 @@
 <form name="customer" method="POST" action="/cart/complete-order">
-  <h2>Карточка покупателя</h2>
-          
- 
-
-
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3">
@@ -37,9 +32,12 @@
       </div>
     </div>
   </div>
-</div>
- 
-<br><div id="final-order">
+</div> 
+
+
+ <div class="container">
+   <div class="center">
+<br><div id="final-order" class="">
            {{#if check}}
            <div><img src={{check.bagModel.image}}></div>
            <div>
@@ -53,7 +51,8 @@
            </div>
            {{/if}}
             </div><br>
-
+            </div>
+</div>
   {{!-- <div class="row">
     <div class="form-group col-sm-6">
       <label for="name" class="h4">Имя</label>

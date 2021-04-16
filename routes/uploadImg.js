@@ -28,7 +28,6 @@ router.post('/', async (req, res) => {
     price:
       (finalBagColor.price + finalMaterial.price + finalSize.price) * numBags,
   });
-  // res.render('customer', {check});
   res.render('uploadImg', {model})
 });
 
