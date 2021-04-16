@@ -3,10 +3,10 @@ const material = document.querySelector('#material');
 const bagSize = document.querySelector('#size');
 const bagColor = document.querySelector('#bagColor');
 const divColor = document.createElement('div');
-    divColor.style.width = '50px';
-    divColor.style.height = '50px';
-    divColor.style.borderRadius = '50%'
-    divColor.style.marginTop = '7px'
+divColor.style.width = '50px';
+divColor.style.height = '50px';
+divColor.style.borderRadius = '50%';
+divColor.style.marginTop = '7px';
 
 const orderFormOne = document.querySelector('#order-form-one');
 const image = document.querySelector('#image');
@@ -56,17 +56,17 @@ orderFormOne.addEventListener('change', async (e) => {
   }
   if (e.target.id === 'bagColor') {
     e.target.parentNode.append(divColor);
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
-    if(e.target.value === 'Серый') divColor.style.background = '#7c7e7f'
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
-    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if (e.target.value === 'Черный') divColor.style.background = '#212121';
+    if (e.target.value === 'Серый') divColor.style.background = '#7c7e7f';
+    if (e.target.value === 'Белый') divColor.style.background = 'white';
+    if (e.target.value === 'Бирюзовый') divColor.style.background = '#00838a';
+    if (e.target.value === 'Синий') divColor.style.background = '#0083c3';
+    if (e.target.value === 'Голубой') divColor.style.background = '#00b4e4';
+    if (e.target.value === 'Коричневый') divColor.style.background = '#6e5e52';
+    if (e.target.value === 'Красный') divColor.style.background = '#d84465';
+    if (e.target.value === 'Желтый') divColor.style.background = '#ffd94a';
   }
 });
-
 
 // const imageLoader = document.querySelector('#uploadForm');
 // orderFormOne.addEventListener('click', (e) => {
