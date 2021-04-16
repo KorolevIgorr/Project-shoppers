@@ -20,3 +20,16 @@
   display: flex;
   justify-content: flex-start;
 }
+
+#form2image {
+  position: absolute;
+  display: inline-flex;
+}
+#myimage {
+  position: relative;
+  display: inline-flex;
+}
+.myText {
+  position: relative;
+  display: inline-flex;
+}

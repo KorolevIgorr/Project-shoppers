@@ -48,30 +48,59 @@ orderFormOne.addEventListener('change', async (e) => {
     width.innerText = `width: ${servRes.height}`;
     depth.innerText = `depth: ${servRes.height}`;
     handleSize.innerText = `length of handles: ${servRes.height}`;
+  }
+  if (e.target.id === 'bagColor') {
+    const divColor = document.createElement('div');
+    divColor.style.width = '100px';
+    divColor.style.height = '100px';
+    // bagColor.borderRadius = '50%'
+    console.log(e.target);
 
-    console.log(servRes);
+    e.target.parentNode.append(divColor);
+    divColor.style.backgroundColor = 'red';
+    // if(e.target.value === 'Бирюзовый') bagColor.background = 'red'
   }
 });
 
-// orderFormOne.addEventListener('submit', async (e) => {
+
+// const imageLoader = document.querySelector('#uploadForm');
+// orderFormOne.addEventListener('click', (e) => {
+//   if (e.target.id === 'sumbit-loader') {
+//     e.preventDefault();
+//   }
+//   console.log(e.target);
+// });
+
+// imageLoader.addEventListener('submit', (e) => {
 //   e.preventDefault();
-//   const response = await fetch('/uploadImg', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({model: model.options[model.selectedIndex].value, material: material.options[material.selectedIndex].value, bagSize: bagSize.options[bagSize.selectedIndex].value, bagColor: bagColor.options[bagColor.selectedIndex].value}),
-//   });
-// })
+// });
 
-const imageLoader = document.querySelector('#uploadForm');
-orderFormOne.addEventListener('click', (e) => {
-  if (e.target.id === 'sumbit-loader') {
-    e.preventDefault();
-  }
-  console.log(e.target);
+const imgheight = document.querySelector('#imgheight');
+imgheight.addEventListener('change', (e) => {
+  myImg.style.maxHeight = `${e.target.value}px`;
 });
+const text = document.querySelector('#text');
+const myText = document.querySelector('.myText');
 
-imageLoader.addEventListener('submit', (e) => {
-  e.preventDefault();
+text.addEventListener('change', (e) => {
+  myText.innerText = e.target.value;
+});
+const myImg = document.querySelector('#myimage');
+let diffX = 0;
+let diffY = 0;
+let imageX = 0;
+let imageY = 0;
+myImg.addEventListener('dragstart', (e) => {
+  diffX = e.clientX - imageX;
+  diffY = e.clientY - imageY;
+  console.log(e.clientX, imageX, diffX);
+  console.log(e.clientY, imageY, diffY);
+});
+myImg.addEventListener('dragend', (e) => {
+  imageY = e.clientY - diffY + +e.target.style.maxHeight.replace('px', '');
+  imageX = e.clientX - diffX;
+  console.log(e.clientX, imageX, diffX);
+  console.log(e.clientY, imageY, diffY);
+  e.target.style.top = `${imageY}px`;
+  e.target.style.left = `${imageX}px`;
 });

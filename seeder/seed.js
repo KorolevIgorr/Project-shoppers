@@ -10,31 +10,91 @@ const Check = require('../model/check');
 
 const bagColors = [
   {
-    name: 'red',
+    name: 'Натуральный',
     price: 1,
   },
   {
-    name: 'blue',
+    name: 'Черный',
     price: 2,
   },
   {
-    name: 'yellow',
-    price: 3,
+    name: 'Серый',
+    price: 2,
+  },
+  {
+    name: 'Белый',
+    price: 2,
+
+  },
+  {
+    name: 'Бирюзовый',
+    price: 2,
+
+  },
+  {
+    name: 'Синий',
+    price: 2,
+  },
+  {
+    name: 'Голубой',
+    price: 2,
+  },
+  {
+    name: 'Коричневый',
+    price: 2,
+  },
+  {
+    name: 'Красный',
+    price: 2,
+  },
+  {
+    name: 'Желтый',
+    price: 2,
   },
 ];
 
 const colors = [
   {
-    name: 'red',
+    name: 'Натуральный',
     price: 1,
   },
   {
-    name: 'blue',
+    name: 'Черный',
     price: 2,
   },
   {
-    name: 'yellow',
-    price: 3,
+    name: 'Серый',
+    price: 2,
+  },
+  {
+    name: 'Белый',
+    price: 2,
+
+  },
+  {
+    name: 'Бирюзовый',
+    price: 2,
+
+  },
+  {
+    name: 'Синий',
+    price: 2,
+  },
+  {
+    name: 'Голубой',
+    price: 2,
+  },
+  {
+    name: 'Коричневый',
+    price: 2,
+  },
+  {
+    name: 'Красный',
+    price: 2,
+  },
+  {
+    name: 'Желтый',
+    price: 2,
   },
 ];
 

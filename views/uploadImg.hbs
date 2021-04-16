@@ -1,0 +1,63 @@
+        <div class="myText"></div>
+{{!-- <form id="order-form-one" action="/uploadImg" method="POST"> --}}
+<div class="container">
+  <div class="row" id="">
+    <div class="col">
+      1 of 3
+      <div class="row">
+        <div>
+        <img id="form2image" src="/image-bags/{{model}}.jpeg" alt="image error" height="300px">
+        </div>
+        <div class="myImg">
+        {{#if myimage}}
+        <img id="myimage" src="/img/{{myimage}}" style="max-width: 200px; max-height: 200px;">
+        {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      2 of 3 (wider)
+        <fieldset>
+          <form id='uploadForm' action='/uploadImg/upload' method='post' encType="multipart/form-data">
+    <div>
+      <div>
+        Image:
+      </div>
+      <div>
+    <input type="file" name="image" />
+      </div>
+    <input type='submit' value='Upload!' />
+    <div>
+    <input type='text' name='numColors' placeholder="number of colors"/>
+    </div>
+     <div>
+    <input type='text' name='colorNames' placeholder="write the color names sepparated by a comma and space"/>
+    </div>
+      </div>
+      <div >
+        Text:
+        <input id="text" type="text" name="text" placeholder="type text">
+        <select class="form-select" aria-label="Default select example" id="colors">
+              {{#each colors}}
+              <option value="{{name}}">{{name}}</option>
+              {{/each}}
+            </select>
+      </div>
+      <div>
+        height:
+        <input id="imgheight" type="text" name="imgheight" placeholder="in pixels"/>
+        </div>
+        <div >
+            <div>
+            <label for="Select" class="form-label" id="priceDiv"> будет DIV стоимости </label>
+            </div>
+            <div class='next2'>
+            <button class="btn btn-primary"><a href="/cart">Далее</a></button>
+            </div>
+          </div>
+          </div>
+</form>
+    </fieldset>
+    {{!-- </form> --}}
+  </div>
+</div>

@@ -35,12 +35,7 @@ router.get('/', async (req, res) => {
   }); // ПОМЕНЯЙ НАЗВАНИЕ, КАК У ИГОРЯ!!!
 });
 
-router.post('/upload', (req, res) => {
-  let { image } = req.files;
-  image.mv(__dirname + '/public/' + image.name, (err) => {
-    res.render('index', { image: image.name });
-  });
-});
+
 
 router.post('/bags', async (req, res) => {
   const size = await BagSize.findOne({
