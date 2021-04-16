@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
     width,
     depth,
     handleSize,
-  }); // ПОМЕНЯЙ НАЗВАНИЕ, КАК У ИГОРЯ!!!
+  });
 });
 
 

@@ -12,16 +12,13 @@ const router = Router();
 
 
 router.post('/', async (req, res) => {
-  const { model, bagColor, material, bagSize } = req.body;
+  console.log(req.body)
+  const { model, bagColor, material, bagSize, limit } = req.body;
   const finalBag = await BagModel.findOne({ name: model });
   const finalBagColor = await BagColor.findOne({ name: bagColor });
   const finalMaterial = await Material.findOne({ name: material });
   const finalSize = await BagSize.findOne({ bagModel: model, sizeName: bagSize });
-  let numBags = 500;
-  console.log(finalBagColor)
-  console.log(finalMaterial)
-  console.log(finalSize)
-
+  let numBags = limit
   const check = await Check.create({
     bagModel: finalBag,
     bagColor: finalBagColor,
