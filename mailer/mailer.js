@@ -15,7 +15,7 @@ async function main(name, lastname, email, phone, adres) {
 
   let info = await transporter.sendMail({
     from: process.env.EMAIL_USER,
-    to: 'zvoznikovandrey@gmail.com',
+    to: 'zvznkv.andrey@gmail.com',
     subject: 'Спецификация',
     text: `Добрый день. Во вложении спецификация и картинка для печати\nИнформация о заказе:\nИмя: ${name}\nФамилия: ${lastname}\nE-mail: ${email}\nТелефон: ${phone}\nАдрес доставки: ${adres}`,
     attachments: [
