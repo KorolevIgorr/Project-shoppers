@@ -45,15 +45,11 @@ router.post('/bags', async (req, res) => {
   const image = await BagModel.findOne({
     image: `/image-bags/${req.body.name}.jpeg`,
   });
-  // console.log(size)
-  console.log(image);
-
   res.send({ size, image }).status(200);
 });
 
 router.post('/size', async (req, res) => {
   const size = await BagSize.findOne(req.body);
-  console.log(size);
   res.send(size).status(200);
 });
 
