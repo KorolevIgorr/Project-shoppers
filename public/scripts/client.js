@@ -2,6 +2,11 @@ const model = document.querySelector('#model');
 const material = document.querySelector('#material');
 const bagSize = document.querySelector('#size');
 const bagColor = document.querySelector('#bagColor');
+const divColor = document.createElement('div');
+    divColor.style.width = '50px';
+    divColor.style.height = '50px';
+    divColor.style.borderRadius = '50%'
+    divColor.style.marginTop = '7px'
 
 const orderFormOne = document.querySelector('#order-form-one');
 const image = document.querySelector('#image');
@@ -50,15 +55,15 @@ orderFormOne.addEventListener('change', async (e) => {
     handleSize.innerText = `length of handles: ${servRes.height}`;
   }
   if (e.target.id === 'bagColor') {
-    const divColor = document.createElement('div');
-    divColor.style.width = '100px';
-    divColor.style.height = '100px';
-    // bagColor.borderRadius = '50%'
-    console.log(e.target);
-
     e.target.parentNode.append(divColor);
-    divColor.style.backgroundColor = 'red';
-    // if(e.target.value === 'Бирюзовый') bagColor.background = 'red'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if(e.target.value === 'Серый') divColor.style.background = '#7c7e7f'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
+    if(e.target.value === 'Черный') divColor.style.background = '#212121'
   }
 });
 
