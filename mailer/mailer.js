@@ -1,7 +1,7 @@
 'use strict';
 const nodemailer = require('nodemailer');
 
-async function main() {
+async function main(name, lastname, email, adres) {
   // let testAccount = await nodemailer.createTestAccount('smtps://USERNAME%40gmail.com:PASSWORD@smtp.gmail.com');
 
   let transporter = nodemailer.createTransport({
@@ -18,12 +18,12 @@ async function main() {
     from: 'shopper-store@yandex.ru',
     to: 'zvoznikovandrey@gmail.com',
     subject: 'Спецификация',
-    text: 'Добрый день. Во вложении спецификация',
+    text: `Добрый день. Во вложении спецификация\nИнформация о заказе:\nИмя: ${name}\nФамилия: ${lastname}\nE-mail: ${email}\nАдрес доставки: ${adres}`,
     attachments: [
       {
         path: './pdf/pdfs/Спецификация.pdf',
       },
-      { path: `./public/img/img.jpeg` },
+      { path: `./public/myImg/clientsImg.jpg` },
     ],
     // html: "<b>Hello world?</b>",
   });
@@ -32,4 +32,6 @@ async function main() {
   console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 }
 
-main().catch(console.error);
+// main().catch(console.error);
+
+module.exports = main

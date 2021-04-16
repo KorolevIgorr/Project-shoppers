@@ -11,7 +11,7 @@
   display: flex;
   align-content: center;
 }
-#order-and-button{
+#order-and-button {
   display: flex;
   justify-content: space-between;
 }
@@ -32,4 +32,7 @@
 .myText {
   position: relative;
   display: inline-flex;
+}
+#a-dalee {
+  color: white;
 }

@@ -1,3 +1,5 @@
+
+
 const model = document.querySelector('#model');
 const material = document.querySelector('#material');
 const bagSize = document.querySelector('#size');
@@ -66,46 +68,4 @@ orderFormOne.addEventListener('change', async (e) => {
     if (e.target.value === 'Красный') divColor.style.background = '#d84465';
     if (e.target.value === 'Желтый') divColor.style.background = '#ffd94a';
   }
-});
-
-// const imageLoader = document.querySelector('#uploadForm');
-// orderFormOne.addEventListener('click', (e) => {
-//   if (e.target.id === 'sumbit-loader') {
-//     e.preventDefault();
-//   }
-//   console.log(e.target);
-// });
-
-// imageLoader.addEventListener('submit', (e) => {
-//   e.preventDefault();
-// });
-
-const imgheight = document.querySelector('#imgheight');
-imgheight.addEventListener('change', (e) => {
-  myImg.style.maxHeight = `${e.target.value}px`;
-});
-const text = document.querySelector('#text');
-const myText = document.querySelector('.myText');
-
-text.addEventListener('change', (e) => {
-  myText.innerText = e.target.value;
-});
-const myImg = document.querySelector('#myimage');
-let diffX = 0;
-let diffY = 0;
-let imageX = 0;
-let imageY = 0;
-myImg.addEventListener('dragstart', (e) => {
-  diffX = e.clientX - imageX;
-  diffY = e.clientY - imageY;
-  console.log(e.clientX, imageX, diffX);
-  console.log(e.clientY, imageY, diffY);
-});
-myImg.addEventListener('dragend', (e) => {
-  imageY = e.clientY - diffY + +e.target.style.maxHeight.replace('px', '');
-  imageX = e.clientX - diffX;
-  console.log(e.clientX, imageX, diffX);
-  console.log(e.clientY, imageY, diffY);
-  e.target.style.top = `${imageY}px`;
-  e.target.style.left = `${imageX}px`;
 });

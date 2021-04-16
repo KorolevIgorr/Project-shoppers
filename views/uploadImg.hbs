@@ -1,3 +1,4 @@
+   <script defer src="/scripts/client2.js"></script>
         <div class="myText"></div>
 {{!-- <form id="order-form-one" action="/uploadImg" method="POST"> --}}
 <div class="container">
@@ -10,7 +11,7 @@
         </div>
         <div class="myImg">
         {{#if myimage}}
-        <img id="myimage" src="/img/{{myimage}}" style="max-width: 200px; max-height: 200px;">
+        <img id="myimage" src="/myImg/clientsImg.jpg" style="max-width: 200px; max-height: 200px;">
         {{/if}}
         </div>
       </div>
@@ -52,7 +53,7 @@
             <label for="Select" class="form-label" id="priceDiv"> будет DIV стоимости </label>
             </div>
             <div class='next2'>
-            <button class="btn btn-primary"><a href="/cart">Далее</a></button>
+            <button class="btn btn-primary"><a id="a-dalee" href="/cart">Далее</a></button>
             </div>
           </div>
           </div>

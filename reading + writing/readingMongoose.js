@@ -21,7 +21,7 @@ const Text = require('../model/text');
 const Image = require('../model/image');
 
 async function write() {
-  const check = await Check.findOne()
+  const check = await Check.findOne({}, {}, { sort: { updatedAt: -1 } })
     .populate('bagModel')
     .populate('bagColor')
     .populate('material')
@@ -37,45 +37,15 @@ async function write() {
       populate: { path: 'colors' },
     });
 
-  const imgColorNameArr = check.image.colors.map((el) => el.name).join(', ');
-  const imgColorPrice = check.image.colors.reduce(
-    (acc, el) => acc + el.price,
-    0
-  );
+  console.log(check);
 
-  let str = `BAG
-type: ${check.bagModel.name}
-color: ${check.bagColor.name} --------------------- ${check.bagColor.price}₽ 
-material: ${check.material.name} --------------------- ${check.material.price}₽ 
-size: ${check.size.sizeName} --------------------- ${check.size.price}₽ 
-  height: ${check.size.height}, 
-  width: ${check.size.width}, 
-  depth: ${check.size.depth}, 
-  length of straps: ${check.size.handleSize}
-  `;
+  let modelName = check.bagModel.name;
+  let colorBag = check.bagColor.name;
+  let materialName = check.material.name;
+  let limit = check.numBags;
+  let priceName = check.price;
 
-  if (check.image) {
-    str += `
-IMAGE
-colors: ${imgColorNameArr} --------------------- ${imgColorPrice}₽ 
-area: ${check.image.area} --------------------- ${check.image.area * 3}₽
-`;
-  }
-  if (check.text) {
-    str += `
-TEXT
-text: ${check.text.name}
-color: ${check.text.color.name} --------------------- ${check.text.color.price}₽
-font: ${check.text.font}
-bold: ${check.text.bold}
-italic: ${check.text.italic}
-area: ${check.text.area} --------------------- ${check.text.area * 3}₽
-`;
-  }
-  str += `
-price of one bag: ${check.numBags}₽
-number of bags bought: ${check.numBags}  
-total price: --------------------- ${check.price * check.numBags}₽`;
+  let str = `Спецификация\n\nНазвание сумки: --------------------- ${modelName}\nЦвет сумки: --------------------- ${colorBag}\nМатериал сумки: --------------------- ${materialName}\nТираж: --------------------- ${limit}\nСтоимость: --------------------- ${priceName}`;
 
   let docDefinition = {
     content: [
@@ -89,10 +59,10 @@ total price: --------------------- ${check.price * check.numBags}₽`;
   pdfDoc.end();
 }
 
-write()
+write();
 async function findNewestCheck() {
-  const a = await Check.findOne({}, {}, { sort: { 'updatedAt' : -1 } })
-  console.log(a)
+  const a = await Check.findOne({}, {}, { sort: { updatedAt: -1 } });
+  console.log(a);
 }
 
 // findNewestCheck()

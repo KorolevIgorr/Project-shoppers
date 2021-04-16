@@ -34,14 +34,12 @@ router.post('/', async (req, res) => {
   // res.render('customer', {check});
   res.render('uploadImg', {model})
 });
-// router.get('/', (req, res) => {
 
-//   res.render("uploadImg")
-// })
 router.post('/upload', async (req, res) => {
+  const check = await Check.findOne({}, {}, { sort: { 'updatedAt' : -1 } }).populate('bagModel')
   let {image} = req.files;
-  image.mv(__dirname.replace('/routes', '') + '/public/img/' + image.name, (err) => {
-    res.render("uploadImg", {myimage: image.name});
+  image.mv(__dirname.replace('/routes', '') + '/public/myImg/' + 'clientsImg.jpg', (err) => {
+    res.render("uploadImg", {myimage: image.name, model: check.bagModel.name});
   });
 });
 

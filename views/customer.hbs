@@ -1,4 +1,4 @@
-<form>
+<form name="customer" method="POST" action="/cart/complete-order">
   <h2>Карточка покупателя</h2>
           <br><div id="final-order">
            {{#if check}}
@@ -18,19 +18,19 @@
   <div class="row">
     <div class="form-group col-sm-6">
       <label for="name" class="h4">Имя</label>
-      <input type="text" class="form-control" id="name" placeholder="Введите Имя" required>
+      <input name="name" type="text" class="form-control" id="name" placeholder="Введите Имя" required>
       </div>
       <div class="form-group col-sm-6">
         <label for="lastName" class="h4">Фамилия</label>
-        <input type="text" class="form-control" id="email" placeholder="Введите Фамилию" required>
+        <input name="lastName" type="text" class="form-control" id="email" placeholder="Введите Фамилию" required>
         </div>
         <div class="form-group col-sm-6">
           <label for="email" class="h4">Почта</label>
-          <input type="email" class="form-control" id="email" placeholder="Введите Почту" required>
+          <input name="email" type="email" class="form-control" id="email" placeholder="Введите Почту" required>
           </div>
           <div class="form-group col-sm-6">
             <label for="adres" class="h4">Адрес доставки</label>
-            <input type="text" class="form-control" id="email" placeholder="Введите Адрес Доставки" required>
+            <input name="adres" type="text" class="form-control" id="email" placeholder="Введите Адрес Доставки" required>
             </div>
             </div><br>
            <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Заказать</button><br>
